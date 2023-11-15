@@ -1,0 +1,7 @@
+{
+    "users":[
+        {"mail":"example@mail.ru","pass":"qwerty09887"},
+        {"mail":"asdfg@mail.ru","pass":"zxcvb457893"},
+        {"mail":"qwerty@mail.ru","pass":"asdfg12345"}
+    ]
+}
