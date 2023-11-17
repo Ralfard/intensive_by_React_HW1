@@ -2,8 +2,8 @@ const form = document.getElementById('form');
 const alertMessage = document.getElementById('alertMessage');
 
 
-
-form.onsubmit = async e => {
+/*async*/
+form.onsubmit = e => {
     e.preventDefault();
 
     let inputData = {
@@ -11,19 +11,23 @@ form.onsubmit = async e => {
         pass: form.password
     }
 
-    const request = await fetch(`https://raw.githubusercontent.com/Ralfard/intensive_by_React_HW1/main/userData.json`);
-    const data = await request.json();
 
-    dataСomparison(data, inputData);
+    //данный код получал раньше данные из файла на gitHub но в процессе я узнал что отправлять запросы на gitHub pages нельзя и переделал код
+    // const request = await fetch(`https://raw.githubusercontent.com/Ralfard/intensive_by_React_HW1/main/userData.json`);
+    // const data = await request.json();
+
+    dataСomparison(accounts, inputData);
 }
 
 
 
 function dataСomparison(arr, inputValue) {
-    let searchMail = arr.find((item, index, arr) => {
-        return item.mail === inputValue.mail.value
-    })
-    if (searchMail.pass === inputValue.pass.value) {
+
+    const searchMail = arr.find((item, index, arr) =>
+        item.mail === inputValue.mail.value
+    )
+
+    if (searchMail && searchMail.pass === inputValue.pass.value) {
         alertMessage.innerText = "";
         alert('Вы авторизованы');
     }
@@ -31,18 +35,18 @@ function dataСomparison(arr, inputValue) {
 }
 
 
-//данные пользователей
-// let accounts = [
-//     {
-//         mail: "example@mail.ru",
-//         pass: "qwerty09887"
-//     },
-//     {
-//         mail: "asdfg@mail.ru",
-//         pass: "zxcvb457893"
-//     },
-//     {
-//         mail: "qwerty@mail.ru",
-//         pass: "asdfg12345"
-//     }
-// ];
+
+const accounts = [
+    {
+        mail: "example@mail.ru",
+        pass: "qwerty09887"
+    },
+    {
+        mail: "asdfg@mail.ru",
+        pass: "zxcvb457893"
+    },
+    {
+        mail: "qwerty@mail.ru",
+        pass: "asdfg12345"
+    }
+];
