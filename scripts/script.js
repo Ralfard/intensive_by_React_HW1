@@ -2,6 +2,7 @@ const form = document.getElementById('form');
 const alertMessage = document.getElementById('alertMessage');
 
 
+
 form.onsubmit = async e => {
     e.preventDefault();
 
@@ -14,11 +15,7 @@ form.onsubmit = async e => {
     const data = await request.json();
 
     dataСomparison(data, inputData);
-
 }
-
-
-
 
 
 
@@ -34,7 +31,7 @@ function dataСomparison(arr, inputValue) {
 }
 
 
-
+//данные пользователей
 // let accounts = [
 //     {
 //         mail: "example@mail.ru",
