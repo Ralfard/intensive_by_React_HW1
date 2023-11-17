@@ -5,21 +5,29 @@ body {
   background-position: center;
   display: flex;
   justify-content: center;
-  height: 97vh;
+  height: 100vh;
+  font-family: sans-serif;
+  margin: 0;
 }
 
 .form {
   background-color: #15172b;
-  border-radius: 20px;
   box-sizing: border-box;
-  height: 500px;
+
+
+
   padding: 20px;
-  width: 460px;
+
+  border-radius: unset;
+
+  height: 100%;
+
+  width: 100%;
 }
 
 .title {
   color: #eee;
-  font-family: sans-serif;
+
   font-size: 36px;
   font-weight: 600;
   margin-top: 30px;
@@ -27,7 +35,6 @@ body {
 
 .subtitle {
   color: #eee;
-  font-family: sans-serif;
   font-size: 16px;
   font-weight: 600;
   margin-top: 10px;
@@ -55,9 +62,12 @@ body {
   color: #eee;
   font-size: 18px;
   height: 100%;
-  outline: 0;
+
   padding: 4px 20px 0;
   width: 100%;
+}
+.input:focus{
+  outline: #06b solid 1px;
 }
 
 .cut {
@@ -83,7 +93,6 @@ body {
 
 .placeholder {
   color: #65657b;
-  font-family: sans-serif;
   left: 20px;
   line-height: 14px;
   pointer-events: none;
@@ -106,7 +115,7 @@ body {
 }
 
 .input:focus~.placeholder {
-  color: #dc2f55;
+  color: #08d;
 }
 
 .submit {
@@ -126,4 +135,25 @@ body {
 
 .submit:active {
   background-color: #06b;
+}
+
+#alertMessage {
+  margin-top: 21px;
+  text-align: center;
+  color: #c60000;
+}
+
+
+/* Малые девайсы («ландшафтные телефоны», >= 576px) */
+@media (min-width: 576px) {
+  body {
+    margin: 10px;
+    height: 97vh;
+  }
+
+  .form {
+    height: 500px;
+    border-radius: 20px;
+    width: 460px;
+  }
 }
